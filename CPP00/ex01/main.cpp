@@ -6,21 +6,21 @@ int	main(void)
 	string		action;
 
 	phoneBook.printWelcomePage();
-	cout << "> ";
+	cout << "Enter the command > ";
 	while (getline(cin, action, '\n'))
 	{
 		if (action == "ADD")
 			phoneBook.addContact();
 		else if (action == "SEARCH")
-			phoneBook.getContactList();
+			phoneBook.search();
 		else if (action == "EXIT")
 		{
 			cout << "EXIT" << endl;
 			return (1);
 		}
 		else
-			cout << "Command not found" << endl;
-		cout << "> ";
+			cout << RED << "\nCommand not found" << endl << NORM;
+		cout << "\nEnter the command > ";
 	}
 	return (0);
 }

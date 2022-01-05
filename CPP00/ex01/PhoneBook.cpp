@@ -1,12 +1,61 @@
 //
 // Created by fatality on 05.01.2022.
 //
-
 #include "main_header.h"
 
 PhoneBook::PhoneBook()
 {
 	contactsCount = 0;
+	fields[0] = "FirstName: > ";
+	fields[1] = "LastName: > ";
+	fields[2] = "NickName: > ";
+	fields[3] = "PhoneNumber: > ";
+	fields[4] = "DarkestSecret: > ";
+}
+
+int		PhoneBook::isDigit(string str)
+{
+	for (size_t i = 0; i < str.size(); i++)
+		if (!isdigit(str[i]))
+			return (0);
+	return (1);
+}
+
+int		PhoneBook::strToInt(string strValue)
+{
+	char	str[strValue.size()];
+	int		res;
+
+	strcpy(str, strValue.c_str());
+	res = atoi(str);
+	return (res);
+}
+
+void	PhoneBook::addContact()
+{
+	string	input;
+
+	cout << "               Add contact's menu\n";
+	cout << "=============================================\n";
+	for (int i = 0; i < 5; i++)
+	{
+		cout << fields[i];
+		getline(cin, input, '\n');
+		if (i == 3 && !isDigit(input))
+		{
+			cout << RED << "\nIncorrect input!\n" << NORM;
+			cout << "Example: 89157891428\n\n";
+			while (true)
+			{
+				cout << "Try Again > ";
+				getline(cin, input, '\n');
+				if (isDigit(input))
+					break;
+			}
+		}
+		contacts[getSize()].setInfo(i, input);
+	}
+	contactsCount++;
 }
 
 void	PhoneBook::printWelcomePage()
@@ -58,21 +107,43 @@ void	PhoneBook::getContactList()
 	cout << endl << "=============================================\n";
 }
 
-int		PhoneBook::getSize() { return (contactsCount); }
-
-void	PhoneBook::addContact()
+void	PhoneBook::getContactInfo()
 {
-	string	input;
-	string	fields[5] = {"FirstName: > ", "LastName: > ", "NickName: > ", \
-	"PhoneNumber: > ", "DarkestSecret: > "};
+		string	input;
+		int		index;
 
-	cout << "               Add contact's menu\n";
-	cout << "=============================================\n";
-	for (int i = 0; i < 5; i++)
-	{
-		cout << fields[i];
-		getline(cin, input, '\n');
-		contacts[getSize()].setInfo(i, input);
-	}
-	contactsCount++;
+		while (true)
+		{
+			cout << "Index: > ";
+			getline(cin, input, '\n');
+			if (!isDigit(input))
+				cout << RED << "Incorrect input!\n" << NORM;
+			else {
+				index = strToInt(input);
+				if (index < 1)
+					cout << RED << "Incorrect input! Your value must be bigger than 0\n" << NORM;
+				else if (index > getSize())
+				{
+					cout << RED << "Index doesn't exist!\n" << NORM;
+					break;
+				}
+				else {
+					cout << endl;
+					for (int i = 0; i < 5; i++)
+					{
+						cout << fields[i] << contacts[index - 1].getInfo(i) << endl;
+					}
+					break;
+				}
+			}
+			cout << RED << "Try again!\n" << NORM;
+		}
 }
+
+void	PhoneBook::search()
+{
+	PhoneBook::getContactList();
+	PhoneBook::getContactInfo();
+}
+
+int		PhoneBook::getSize() { return (contactsCount); }
