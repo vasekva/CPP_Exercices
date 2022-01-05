@@ -1,7 +1,3 @@
-//
-// Created by fatality on 05.01.2022.
-//
-
 #ifndef CPP_MODULES_MAIN_HEADER_H
 #define CPP_MODULES_MAIN_HEADER_H
 

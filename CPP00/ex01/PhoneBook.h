@@ -1,7 +1,3 @@
-//
-// Created by fatality on 05.01.2022.
-//
-
 #ifndef CPP_MODULES_PHONEBOOK_H
 #define CPP_MODULES_PHONEBOOK_H
 
@@ -12,18 +8,17 @@ class PhoneBook {
 		Contact	contacts[8];
 		string	fields[5];
 		int		contactsCount;
+		int		isDigit(string str);
+		int		printContactInfo(int contactInd);
+		int		strToInt(string str);
+		void	getContactList(void);
+		void	getContactInfo(void);
+		void	printPhoneBook(int contactInd, int infoInd);
 	public:
 		PhoneBook();
 		void	printWelcomePage(void);
-		void	printInfo(int contactInd, int infoInd);
-		int		isDigit(string str);
-		int		strToInt(string str);
 		void	addContact(void);
 		void	search(void);
-		void	getContactList(void);
-		void	getContactInfo(void);
-		int		getSize();
 };
-
 
 #endif //CPP_MODULES_PHONEBOOK_H

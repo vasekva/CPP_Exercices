@@ -1,7 +1,3 @@
-//
-// Created by fatality on 05.01.2022.
-//
-
 #include "Contact.h"
 
 void	Contact::setInfo(int ind, string value)
