@@ -7,9 +7,12 @@
 #ifndef CPP_MODULES_CONTACT_H
 #define CPP_MODULES_CONTACT_H
 
-
 class Contact {
-
+	private:
+		string	info[5];
+	public:
+		string	getInfo(int ind);
+		void 	setInfo(int ind, string value);
 };
 
 

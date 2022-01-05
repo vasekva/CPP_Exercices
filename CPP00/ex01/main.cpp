@@ -5,14 +5,14 @@ int	main(void)
 	PhoneBook	phoneBook;
 	string		action;
 
-	phoneBook.getInfo();
+	phoneBook.printWelcomePage();
 	cout << "> ";
 	while (getline(cin, action, '\n'))
 	{
 		if (action == "ADD")
-			cout << "ADD" << endl;
+			phoneBook.addContact();
 		else if (action == "SEARCH")
-			cout << "SEARCH" << endl;
+			phoneBook.getContactList();
 		else if (action == "EXIT")
 		{
 			cout << "EXIT" << endl;

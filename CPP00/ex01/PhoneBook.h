@@ -5,12 +5,19 @@
 #ifndef CPP_MODULES_PHONEBOOK_H
 #define CPP_MODULES_PHONEBOOK_H
 
+#include "Contact.h"
 
 class PhoneBook {
 	private:
 		Contact	contacts[8];
+		int		contactsCount;
 	public:
-		void getInfo(void);
+		PhoneBook();
+		void	printWelcomePage(void);
+		void	printInfo(int contactInd, int infoInd);
+		void	addContact(void);
+		void	getContactList(void);
+		int		getSize();
 };
 
 

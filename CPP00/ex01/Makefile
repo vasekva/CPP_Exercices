@@ -10,7 +10,9 @@ CC 			= c++
 
 CPPFLAGS	= -Wall -Wextra -Werror -Wno-unused -std=c++98 -MMD
 
-SRCS		= *.cpp
+HEADER		= main_header.h PhoneBook.h Contact.h
+
+SRCS		= main.cpp PhoneBook.cpp Contact.cpp
 
 OBJS_DIR 	= objs/
 
@@ -24,7 +26,7 @@ all: $(NAME)
 $(OBJS_DIR):
 	@mkdir -p $(OBJS_DIR)
 
-$(OBJS_DIR)%.o: ./%.cpp
+$(OBJS_DIR)%.o: ./%.cpp $(HEADER)
 	@$(CC) $(CPPFLAGS) -c $< -o $@
 	@printf "$(L_BLUE)Object %-40.100s [$(D_GREEN)✔$(L_BLUE)]\r" $@
 
