@@ -7,4 +7,5 @@ int	main(void)
 	delete zombie2;
 	Zombie zombie1("stackZombie");
 	zombie1.announce();
+	return (0);
 }
