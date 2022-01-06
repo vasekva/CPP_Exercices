@@ -1,6 +1,3 @@
-//
-// Created by Josephine Beregond on 12/5/21.
-//
 #include <iostream>
 
 int	main(int argc, char **argv)

@@ -35,7 +35,7 @@ Account::Account(void) : _accountIndex(Account::_nbAccounts++), _amount(0),
 
 Account::~Account(void)
 {
-	--Account::_nbAccounts;
+	Account::_nbAccounts--;
 	Account::_totalAmount -= this->_amount;
 	Account::_totalNbDeposits -= this->_nbDeposits;
 	Account::_totalNbWithdrawals -= this->_nbWithdrawals;
