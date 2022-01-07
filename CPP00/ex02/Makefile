@@ -8,7 +8,7 @@ NC			= 	\033[0m
 
 CC 			= c++
 
-CPPFLAGS	= -Wall -Wextra -Werror -Wno-unused -std=c++98 -MMD
+FLAGS	= -Wall -Wextra -Werror -Wno-unused -std=c++98 -MMD
 
 SRCS		= Account.cpp tests.cpp
 
@@ -25,11 +25,11 @@ $(OBJS_DIR):
 	@mkdir -p $(OBJS_DIR)
 
 $(OBJS_DIR)%.o: ./%.cpp $(HEADER)
-	@$(CC) $(CPPFLAGS) -c $< -o $@
+	@$(CXX) $(FLAGS) -c $< -o $@
 	@printf "$(L_BLUE)Object %-40.100s [$(D_GREEN)✔$(L_BLUE)]\r" $@
 
 $(NAME): $(OBJS_DIR) $(OBJS) $(SRCS)
-	@$(CC) $(CPPFLAGS) $(OBJS) -o $(NAME)
+	@$(CXX) $(FLAGS) $(OBJS) -o $(NAME)
 	@printf '$(L_GREEN)%-100.100s\n$(NC)' '${NAME} compile success!'
 
 clean:
