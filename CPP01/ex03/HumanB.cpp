@@ -1,4 +1,4 @@
-#include "headers/HumanB.hpp"
+#include "HumanB.hpp"
 
 HumanB::HumanB(string name)
 {
@@ -29,7 +29,7 @@ void HumanB::attack() const
 	cout << BOLD << GREEN << "HumanB" << NORM
 		<< " with name "
 		<< BRIGHT_BLUE << getName() << NORM
-		<< " atack with his "
+		<< " attack with his "
 		<< YELLOW << weapon->getType() << NORM
 		<< endl;
 }

@@ -1,7 +1,9 @@
 #include <string>
 #include <iostream>
 
-using namespace std;
+using std::string;
+using std::cout;
+using std::endl;
 
 int	main(void)
 {
@@ -10,9 +12,9 @@ int	main(void)
 	string	*stringPTR = &brainStr;
 
 	cout << "Address of the brainStr in heap: " << &brainStr << endl;
-	cout << "It's value: " << brainStr << endl;
+	cout << "It's value: " << brainStr << endl << endl;;
 	cout << "Address of the *stringPTR in heap: " << stringPTR << endl;
-	cout << "It's value: " << *stringPTR << endl;
+	cout << "It's value: " << *stringPTR << endl << endl;
 	cout << "Address of the &stringREF in heap: " << &stringREF << endl;
 	cout << "It's value: " << stringREF << endl;
 	return (0);

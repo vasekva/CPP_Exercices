@@ -1,9 +1,4 @@
-#include "headers/HumanA.hpp"
-
-//HumanA::HumanA(string name, Weapon &weapon) : weapon(weapon)
-//{
-//	this->name = name;
-//}
+#include "HumanA.hpp"
 
 HumanA::HumanA(string name, Weapon &weapon) : weapon(weapon)
 {
@@ -28,7 +23,7 @@ void HumanA::attack() const
 	cout << BOLD << RED << "HumanA" << NORM
 		 << " with name "
 		 << PURPLE << getName() << NORM
-		 << " atack with his "
+		 << " attack with his "
 		 << YELLOW << weapon.getType() << NORM
 		 << endl;
 }

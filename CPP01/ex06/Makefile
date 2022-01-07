@@ -1,4 +1,4 @@
-NAME 		= replace
+NAME 		= karenFilter
 
 D_GREEN		=	\033[0;32m
 L_GREEN		=	\033[1;32m
@@ -10,9 +10,11 @@ CXX 		= c++
 
 FLAGS	= -Wall -Wextra -Werror -Wno-unused -std=c++98 -MMD
 
-SRCS		= main.cpp replaceStrInFiles.cpp
+SRCS		= main.cpp Karen.cpp
 
 OBJS_DIR 	= objs/
+
+HEADERS		= -I ./headers/
 
 OBJS 		= $(addprefix $(OBJS_DIR), $(SRCS:.cpp=.o))
 D_FILES 	= $(patsubst %.o,%.d,$(OBJS))
@@ -25,7 +27,7 @@ $(OBJS_DIR):
 	@mkdir -p $(OBJS_DIR)
 
 $(OBJS_DIR)%.o: ./%.cpp
-	@$(CXX) $(FLAGS) -c $< -o $@
+	@$(CXX) $(FLAGS) $(HEADERS) -c $< -o $@
 	@printf "$(L_BLUE)Object %-40.100s [$(D_GREEN)✔$(L_BLUE)]\r" $@
 
 $(NAME): $(OBJS_DIR) $(OBJS) $(SRCS)
@@ -39,7 +41,6 @@ clean:
 
 fclean: clean
 	@$(RM) $(NAME)
-	@(rm -rf *.replace)
 	@printf '$(PURPLE)Delete ${NAME} success!\n$(NC)'
 
 -include $(DEPS)

@@ -24,6 +24,13 @@ int replaceStrInFiles(string fileName, string str1, string str2)
 	string	tmpStr;
 	size_t	start_pos;
 
+	if (str1.empty() || str2.empty())
+	{
+		cerr << BOLD << RED
+			 << "Error! String is empty!" << NORM << endl;
+		return (-1);
+	}
+	start_pos = 0;
 	inputFile.open(fileName);
 	if (inputFile.is_open())
 	{
@@ -38,14 +45,16 @@ int replaceStrInFiles(string fileName, string str1, string str2)
 		{
 			while (getline(inputFile, tmpStr))
 			{
+				if (!inputFile.eof())
+					tmpStr += '\n';
 				while ((start_pos = tmpStr.find(str1, start_pos)) != string::npos)
 				{
-					tmpStr.erase(start_pos, str1.length());
+					tmpStr.erase(start_pos, str1.size());
 					tmpStr.insert(start_pos, str2);
 					start_pos += str2.length();
 				}
 				start_pos = 0;
-				outputFile << tmpStr << endl;
+				outputFile << tmpStr;
 			}
 		}
 	}

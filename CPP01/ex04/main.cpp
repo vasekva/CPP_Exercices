@@ -42,7 +42,7 @@ int	main(int argc, char **argv)
 	}
 	else
 	{
-		if (!replaceStrInFiles(argv[1], argv[2], argv[3]))
+		if (replaceStrInFiles(argv[1], argv[2], argv[3]) == -1)
 		{
 			cout << BOLD << RED
 				<< "Error in the process of replacing strings!" << NORM << endl;

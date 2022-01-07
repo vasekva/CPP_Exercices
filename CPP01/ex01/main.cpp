@@ -1,4 +1,4 @@
-#include "headers/Zombie.hpp"
+#include "Zombie.hpp"
 
 int	main(void)
 {
@@ -9,5 +9,6 @@ int	main(void)
 	for (int i = 0; i < n; i++)
 		horde[i].announce();
 	delete [] horde;
+	horde = nullptr;
 	return (0);
 }

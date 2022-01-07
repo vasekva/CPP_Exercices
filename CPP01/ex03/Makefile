@@ -27,11 +27,11 @@ $(OBJS_DIR):
 	@mkdir -p $(OBJS_DIR)
 
 $(OBJS_DIR)%.o: ./%.cpp
-	@$(CXX) $(CPPFLAGS) $(HEADERS) -c $< -o $@
+	@$(CXX) $(FLAGS) $(HEADERS) -c $< -o $@
 	@printf "$(L_BLUE)Object %-40.100s [$(D_GREEN)✔$(L_BLUE)]\r" $@
 
 $(NAME): $(OBJS_DIR) $(OBJS) $(SRCS)
-	@$(CXX) $(CPPFLAGS) $(OBJS) -o $(NAME)
+	@$(CXX) $(FLAGS) $(OBJS) -o $(NAME)
 	@printf '$(L_GREEN)%-100.100s\n$(NC)' '${NAME} compile success!'
 
 clean:

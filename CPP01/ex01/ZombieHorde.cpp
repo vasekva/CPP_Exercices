@@ -1,4 +1,4 @@
-#include "headers/Zombie.hpp"
+#include "Zombie.hpp"
 
 using	std::to_string;
 

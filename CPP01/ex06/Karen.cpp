@@ -59,7 +59,7 @@ void Karen::complain(string level)
 
 	position = 0;
 	hasAction = false;
-	int length = sizeof(met)/sizeof(met[0]);
+	int length = sizeof(met) / sizeof(met[0]);
 	while (position < length)
 	{
 		if (level.compare(actions[position]) == 0)
@@ -69,12 +69,15 @@ void Karen::complain(string level)
 		}
 		position++;
 	}
-	if (hasAction)
-		(this->*met[position])();
-	else
-		cout << BRIGHT_BLUE << URED
-			<< "You entered" << NORM
-			<< " \"" << level<< "\" " << URED
-			<< "Sorry, i don't know what to do(((("
-			<< NORM << endl;
+	switch (position)
+	{
+		case 0: (this->*met[0])();
+		case 1: (this->*met[1])();
+		case 2: (this->*met[2])();
+		case 3: (this->*met[3])(); break;
+		default:
+			cout << URED
+				 << "[ Probably complaining about insignificant problems ]"
+				 << NORM << endl;
+	}
 }

@@ -8,7 +8,7 @@ NC			= 	\033[0m
 
 CXX 		= c++
 
-CPPFLAGS	= -Wall -Wextra -Werror -Wno-unused -std=c++98 -MMD
+FLAGS	= -Wall -Wextra -Werror -Wno-unused -std=c++98 -MMD
 
 HEADER		= Zombie.hpp
 
@@ -27,11 +27,11 @@ $(OBJS_DIR):
 	@mkdir -p $(OBJS_DIR)
 
 $(OBJS_DIR)%.o: ./%.cpp $(HEADER)
-	@$(CXX) $(CPPFLAGS) -c $< -o $@
+	@$(CXX) $(FLAGS) -c $< -o $@
 	@printf "$(L_BLUE)Object %-40.100s [$(D_GREEN)✔$(L_BLUE)]\r" $@
 
 $(NAME): $(OBJS_DIR) $(OBJS) $(SRCS)
-	@$(CXX) $(CPPFLAGS) $(OBJS) -o $(NAME)
+	@$(CXX) $(FLAGS) $(OBJS) -o $(NAME)
 	@printf '$(L_GREEN)%-100.100s\n$(NC)' '${NAME} compile success!'
 
 clean:
