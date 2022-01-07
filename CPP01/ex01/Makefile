@@ -6,11 +6,11 @@ L_BLUE		=	\033[1;36m
 PURPLE		=	\033[1;35m
 NC			= 	\033[0m
 
-CC 			= c++
+CXX			= c++
 
 CPPFLAGS	= -Wall -Wextra -Werror -Wno-unused -std=c++98 -MMD
 
-HEADER		= Zombie.hpp
+HEADERS		= -I ./headers/
 
 SRCS		= main.cpp Zombie.cpp ZombieHorde.cpp
 
@@ -26,12 +26,12 @@ all: $(NAME)
 $(OBJS_DIR):
 	@mkdir -p $(OBJS_DIR)
 
-$(OBJS_DIR)%.o: ./%.cpp $(HEADER)
-	@$(CC) $(CPPFLAGS) -c $< -o $@
+$(OBJS_DIR)%.o: ./%.cpp
+	@$(CXX) $(CPPFLAGS) $(HEADERS) -c $< -o $@
 	@printf "$(L_BLUE)Object %-40.100s [$(D_GREEN)✔$(L_BLUE)]\r" $@
 
 $(NAME): $(OBJS_DIR) $(OBJS) $(SRCS)
-	@$(CC) $(CPPFLAGS) $(OBJS) -o $(NAME)
+	@$(CXX) $(CPPFLAGS) $(OBJS) -o $(NAME)
 	@printf '$(L_GREEN)%-100.100s\n$(NC)' '${NAME} compile success!'
 
 clean:

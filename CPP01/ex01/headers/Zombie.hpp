@@ -11,13 +11,17 @@
 
 #endif
 
-using namespace std;
+using std::cout;
+using std::string;
+using std::cin;
+using std::endl;
 
 class Zombie {
 	private:
 		string	name;
 	public:
 		Zombie();
+		Zombie(string name);
 		~Zombie();
 		void	setName(string name);
 		string	getName();

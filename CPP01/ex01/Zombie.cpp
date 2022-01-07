@@ -1,6 +1,11 @@
-#include "Zombie.hpp"
+#include "headers/Zombie.hpp"
 
 Zombie::Zombie() { }
+
+Zombie::Zombie(string name)
+{
+	setName(name);
+}
 
 Zombie::~Zombie()
 {

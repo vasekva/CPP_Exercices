@@ -1,4 +1,6 @@
-#include "Zombie.hpp"
+#include "headers/Zombie.hpp"
+
+using	std::to_string;
 
 Zombie	*zombieHorde(int n, string name)
 {

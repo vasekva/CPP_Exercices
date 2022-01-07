@@ -1,4 +1,4 @@
-#include "Weapon.hpp"
+#include "headers/Weapon.hpp"
 
 Weapon::Weapon(string type)
 {
@@ -7,7 +7,8 @@ Weapon::Weapon(string type)
 
 Weapon::~Weapon()
 {
-	cout << "Weapon " << getType() << " has been destroyed\n";
+	cout << "Weapon " << getType()
+		<< BOLD << RED << " has been destroyed\n" << NORM;
 }
 
 void Weapon::setType(string type)
@@ -15,7 +16,7 @@ void Weapon::setType(string type)
 	this->type = type;
 }
 
-const string Weapon::getType()
+const string &Weapon::getType() const
 {
-	return (this->type);
+	return (type);
 }
