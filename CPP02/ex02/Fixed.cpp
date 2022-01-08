@@ -154,15 +154,15 @@ Fixed	&Fixed::operator++()
 // POSTFIX
 Fixed	Fixed::operator--(int)
 {
-	Fixed prev = *this;
-	++*this;
+	Fixed prev(*this);
+	--*this;
 	return (prev);
 }
 
 Fixed	Fixed::operator++(int)
 {
-	Fixed prev = *this;
-	--*this;
+	Fixed prev(*this);
+	++*this;
 	return (prev);
 }
 
