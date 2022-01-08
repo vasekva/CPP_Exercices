@@ -30,7 +30,7 @@ using	std::endl;
 class Fixed {
 	public:
 		Fixed();
-		Fixed(Fixed const &copyObject);
+		Fixed(const Fixed &copyObject);
 		Fixed(const int value);
 		Fixed(const float value);
 		~Fixed();

@@ -9,10 +9,10 @@ int	main(void)
 
 	a = Fixed( 1234.4321f );
 
-	cout << "a: " << &a << endl;
-	cout << "b: " << &b << endl;
-	cout << "c: " << &c << endl;
-	cout << "d: " << &d << endl;
+//	cout << "a: " << &a << endl;
+//	cout << "b: " << &b << endl;
+//	cout << "c: " << &c << endl;
+//	cout << "d: " << &d << endl;
 
 	std::cout << "a is " << a << std::endl;
 	std::cout << "b is " << b << std::endl;
