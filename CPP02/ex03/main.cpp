@@ -20,6 +20,7 @@ int	main(void)
 		else
 			cout << point << RED << "Oops, nope(\n" << NORM;
 	}
+
 	return (0);
 }
 //https://stackoverflow.com/questions/13300904/determine-whether-point-lies-inside-triangle
