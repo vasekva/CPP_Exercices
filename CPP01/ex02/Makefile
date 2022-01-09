@@ -41,6 +41,6 @@ fclean: clean
 	@$(RM) $(NAME)
 	@printf '$(PURPLE)Delete ${NAME} success!\n$(NC)'
 
--include $(DEPS)
+-include $(D_FILES)
 
 re: fclean all
