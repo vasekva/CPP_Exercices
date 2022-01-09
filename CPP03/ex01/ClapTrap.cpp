@@ -7,7 +7,7 @@ ClapTrap::ClapTrap()
 	this->energyPoints = 10;
 	this->attackDamage = 0;
 	cout << BOLD << PURPLE << "[ClapTrap]" << NORM;
-	cout << BOLD << GREEN << "Default Constructor " << NORM
+	cout << BOLD << GREEN << "Default Constructor\t" << NORM
 		 << "of an object with name "
 		 << BRIGHT_BLUE << this->getName() << NORM
 		 << " called"
@@ -21,7 +21,7 @@ ClapTrap::ClapTrap(const string &name)
 	this->energyPoints = 10;
 	this->attackDamage = 0;
 	cout << BOLD << PURPLE << "[ClapTrap]" << NORM;
-	cout << BOLD << GREEN << "Constructor " << NORM
+	cout << BOLD << GREEN << "Constructor\t\t" << NORM
 		 << "of an object with name "
 		 << BRIGHT_BLUE << this->getName() << NORM
 		 << " called"
@@ -31,17 +31,17 @@ ClapTrap::ClapTrap(const string &name)
 ClapTrap::~ClapTrap()
 {
 	cout << BOLD << PURPLE << "[ClapTrap]" << NORM;
-	cout << BOLD << RED << "Destructor " << NORM
+	cout << BOLD << RED << "Destructor\t" << NORM
 		 << "of the object with name \""
 		 << BRIGHT_BLUE << this->getName() << NORM
-		 << "\" called"
+		 << "\"\tcalled"
 		 << endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &copyObject)
 {
 	cout << BOLD << PURPLE << "[ClapTrap]" << NORM;
-	cout << BOLD << GREEN << "Copy constructor " << NORM
+	cout << BOLD << GREEN << "Copy constructor\t" << NORM
 		 << "of an object "
 		 << URED << this << NORM
 		 << " and "
@@ -58,10 +58,13 @@ int		ClapTrap::getAttackDamage() const { return (this->attackDamage); }
 
 ClapTrap	&ClapTrap::operator=(const ClapTrap &copyObject)
 {
-	this->name = "copy_" + copyObject.getName();
-	this->hitPoints = copyObject.getHitPoint();
-	this->energyPoints = copyObject.getEnergyPoints();
-	this->attackDamage = copyObject.getAttackDamage();
+	if (this != &copyObject)
+	{
+		this->name = "copy_" + copyObject.getName();
+		this->hitPoints = copyObject.getHitPoint();
+		this->energyPoints = copyObject.getEnergyPoints();
+		this->attackDamage = copyObject.getAttackDamage();
+	}
 	return (*this);
 }
 

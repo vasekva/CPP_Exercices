@@ -54,10 +54,13 @@ int		ClapTrap::getAttackDamage() const { return (this->attackDamage); }
 
 ClapTrap	&ClapTrap::operator=(const ClapTrap &copyObject)
 {
-	this->name = "copy_" + copyObject.getName();
-	this->hitPoints = copyObject.getHitPoint();
-	this->energyPoints = copyObject.getEnergyPoints();
-	this->attackDamage = copyObject.getAttackDamage();
+	if (this != &copyObject)
+	{
+		this->name = "copy_" + copyObject.getName();
+		this->hitPoints = copyObject.getHitPoint();
+		this->energyPoints = copyObject.getEnergyPoints();
+		this->attackDamage = copyObject.getAttackDamage();
+	}
 	return (*this);
 }
 
