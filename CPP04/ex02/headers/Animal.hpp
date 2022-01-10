@@ -35,7 +35,7 @@ class Animal
 		Animal(const Animal &copyObject);
 		Animal	&operator=(const Animal &object);
 		string	getType(void) const;
-		virtual void	makeSound() const;
+		virtual void	makeSound() const = 0;
 	protected:
 		string	type;
 };

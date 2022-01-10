@@ -36,33 +36,33 @@ int	main(void)
 		Brain   *brain = chuppy.getAttribute();
 	cout << "========================================================\n";
 
-		brain->ideas[0] = "I want a bone! 🍖";
-		brain->ideas[1] = "Ooooh, this ball is so nice!! ⚽️";
+	brain->setIdea(1, "I want a bone! 🍖");
+	brain->setIdea(1, "Ooooh, this ball is so nice!! ⚽️");
 
-		cout << YELLOW << "["
-			<< chuppy.getType() << "] " << UGREEN
-			<< chuppy.getAttribute()->ideas[1] << NORM
-			<< endl;
-		cout << YELLOW << "["
-			<< reks.getType() << "] " << UGREEN
-			<< reks.getAttribute()->ideas[1] << NORM
-			<< endl;
+	cout << YELLOW << "["
+		 << chuppy.getType() << "] " << UGREEN
+		 << chuppy.getAttribute()->getIdea(1) << NORM
+		 << endl;
+	cout << YELLOW << "["
+		 << reks.getType() << "] " << UGREEN
+		 << reks.getAttribute()->getIdea(1) << NORM
+		 << endl;
 
-		cout << BRIGHT_BLUE << "Copy...." << NORM << endl;
-		reks = chuppy;
+	cout << BRIGHT_BLUE << "Copy...." << NORM << endl;
+	reks = chuppy;
 
-		cout << YELLOW << "["
-			<< chuppy.getType() << "] " << UGREEN
-			<< chuppy.getAttribute()->ideas[1] << NORM
-			<< endl;
-		cout << YELLOW << "["
-			<< reks.getType() << "] " << UGREEN
-			<< reks.getAttribute()->ideas[1] << NORM
-			<< endl;
-		cout << BLUE "Adress *_brain Dog: " NORM << reks.getAttribute()
-			<< endl
-			<< PURPLE "Adress *_brain copyDog: " << NORM
-			<< chuppy.getAttribute() << std::endl;
+	cout << YELLOW << "["
+		 << chuppy.getType() << "] " << UGREEN
+		 << chuppy.getAttribute()->getIdea(1) << NORM
+		 << endl;
+	cout << YELLOW << "["
+		 << reks.getType() << "] " << UGREEN
+		 << reks.getAttribute()->getIdea(1) << NORM
+		 << endl;
+	cout << BLUE "Adress *_brain Dog: " NORM << reks.getAttribute()
+		<< endl
+		<< PURPLE "Adress *_brain copyDog: " << NORM
+		<< chuppy.getAttribute() << endl;
 
 	cout << "========================================================\n";
 	cout << "==                     Destructors                    ==\n";

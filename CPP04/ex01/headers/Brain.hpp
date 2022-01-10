@@ -8,7 +8,12 @@ class Brain {
 		Brain();
 		~Brain();
 		Brain(const Brain &copyObject);
+
+		string	getIdea(const int index) const;
+		void	setIdea(const int index, string idea);
+
 		Brain	&operator=(const Brain &object);
+	private:
 		string	ideas[100];
 };
 

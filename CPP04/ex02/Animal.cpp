@@ -36,9 +36,3 @@ Animal	&Animal::operator=(const Animal &object)
 	}
 	return (*this);
 }
-
-void	Animal::makeSound() const
-{
-	cout << BRIGHT_BLUE << " 🔊 Some strange animal's sound has been made" << NORM << endl;
-}
-

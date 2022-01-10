@@ -36,3 +36,6 @@ Brain    &Brain::operator=(const Brain  &object)
 	}
 	return (*this);
 }
+
+string	Brain::getIdea(const int index) const { return this->ideas[index]; }
+void	Brain::setIdea(int index, std::string idea) { this->ideas[index] = idea; }
