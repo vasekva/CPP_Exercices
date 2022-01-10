@@ -6,7 +6,7 @@ FragTrap::FragTrap() : ClapTrap("Default FragTrap_Name")
 	this->energyPoints = 100;
 	this->attackDamage = 30;
 	cout << BOLD << BLUE << "[FragTrap] " << NORM;
-	cout << BOLD << GREEN << "Default Constructor\t" << NORM
+	cout << BOLD << GREEN << "Def.Constructor\t" << NORM
 		 << BRIGHT_BLUE << this->name << NORM
 		 << " called"
 		 << endl;
@@ -51,7 +51,6 @@ int		FragTrap::getHitPoint() const { return (this->hitPoints); }
 int		FragTrap::getEnergyPoints() const { return (this->energyPoints); }
 int		FragTrap::getAttackDamage() const { return (this->attackDamage); }
 
-
 FragTrap	&FragTrap::operator=(const FragTrap &copyObject)
 {
 	if (this != &copyObject)
@@ -71,7 +70,7 @@ void FragTrap::attack(const string &target) const
 		 << endl;
 }
 
-void	FragTrap::highFivesGuys() const
+void	FragTrap::highFivesGuys()
 {
 	cout << BOLD << BLUE << "[FragTrap] " << NORM;
 	cout << BRIGHT_BLUE << this->name << " " << UGREEN

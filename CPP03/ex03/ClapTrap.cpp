@@ -7,7 +7,7 @@ ClapTrap::ClapTrap()
 	this->energyPoints = 10;
 	this->attackDamage = 0;
 	cout << BOLD << PURPLE << "[ClapTrap] " << NORM;
-	cout << BOLD << GREEN << "Default Constructor\t" << NORM
+	cout << BOLD << GREEN << "Def.Constructor\t" << NORM
 		 << BRIGHT_BLUE << this->name << NORM
 		 << " called"
 		 << endl;
@@ -65,7 +65,7 @@ ClapTrap	&ClapTrap::operator=(const ClapTrap &copyObject)
 	return (*this);
 }
 
-void ClapTrap::attack(const string &target) const
+void ClapTrap::attack(const string &target)
 {
 	cout << BOLD << PURPLE << "[ClapTrap] " << NORM;
 	cout << "ClapTrap " << BRIGHT_BLUE << this->name << NORM
@@ -78,7 +78,7 @@ void ClapTrap::attack(const string &target) const
 void	ClapTrap::takeDamage(unsigned int amount)
 {
 	cout << BOLD << PURPLE << "[ClapTrap] " << NORM;
-	cout << BRIGHT_BLUE << this->name << NORM
+	cout << "ClapTrap " << BRIGHT_BLUE << this->name << NORM
 		 << " gets " << URED << amount << NORM " points of damage!"
 		 << endl;
 	if ((this->hitPoints -= amount) < 0)

@@ -7,6 +7,7 @@ int	main(void)
 	cout << "==                  Constructors                      ==\n";
 	cout << "========================================================\n";
 
+	ClapTrap clap	= ClapTrap();
 	ScavTrap firstScav = ScavTrap(); // 1
 	ScavTrap secondScav = ScavTrap("secondScav"); // 2
 	ScavTrap copyScav = secondScav; // 3
@@ -31,21 +32,21 @@ int	main(void)
 	cout << endl;
 
 	cout << endl;
-	cout << BRIGHT_BLUE << copyScav.getName() << NORM
+	cout << BRIGHT_BLUE << clap.getName() << NORM
 		 << " hitpoints: "
-			GREEN << copyScav.getHitPoint() << NORM
+			GREEN << clap.getHitPoint() << NORM
 		 << endl;
 
-	secondScav.attack(copyScav.getName());
-	copyScav.takeDamage(secondScav.getAttackDamage());
+	secondScav.attack(clap.getName());
+	clap.takeDamage(secondScav.getAttackDamage());
 
-	cout << BRIGHT_BLUE << copyScav.getName() << NORM
+	cout << BRIGHT_BLUE << clap.getName() << NORM
 		 << " hitpoints: "
-			GREEN << copyScav.getHitPoint() << NORM
+			GREEN << clap.getHitPoint() << NORM
 		 << endl;
 
 	copyScav.guardGate();
-
+	clap.attack(copyScav.getName());
 	cout << "========================================================\n";
 	cout << "==                     Destructors                    ==\n";
 	cout << "========================================================\n";

@@ -1,4 +1,4 @@
-#include "FragTrap.hpp"
+#include "DiamondTrap.hpp"
 
 int	main(void)
 {
@@ -7,29 +7,25 @@ int	main(void)
 	cout << "==                  Constructors                      ==\n";
 	cout << "========================================================\n";
 
-	FragTrap firstFrag;
-	FragTrap secondFrag("Gollum");
-	ClapTrap cpSecondFrag("Clap");
-	FragTrap thirdFrag("Rake");
+	DiamondTrap diamondWTF("WeirdMan");
+	DiamondTrap	strangeMan("Kiba");
 
 	cout << endl;
 	cout << "=======================================================\n";
 	cout << "==                      Game                         ==\n";
 	cout << "=======================================================\n";
 
-	firstFrag.attack(secondFrag.getName());
-	secondFrag.takeDamage(firstFrag.getAttackDamage());
-	firstFrag = thirdFrag;
-	firstFrag.attack(secondFrag.getName());
-	secondFrag.takeDamage(firstFrag.getAttackDamage());
-	secondFrag.beRepaired(1);
-	cout << BRIGHT_BLUE << secondFrag.getName() << NORM
-		 << " hitpoints: "
-			GREEN << secondFrag.getHitPoint() << NORM
-		 << endl;
-	thirdFrag.highFivesGuys();
-
-	cpSecondFrag.attack(thirdFrag.getName());
+	cout << "hitPoints: "
+		<< GREEN << diamondWTF.getHitPoint() << NORM << endl;
+	cout << "energyPoints: "
+		<< GREEN << diamondWTF.getEnergyPoints() << NORM << endl;
+	cout << "attackDamage: "
+		<< GREEN << diamondWTF.getAttackDamage() << NORM << endl;
+	cout << endl;
+	diamondWTF.whoAmI();
+	strangeMan.whoAmI();
+	diamondWTF.highFivesGuys();
+	strangeMan.guardGate();
 
 	cout << "========================================================\n";
 	cout << "==                     Destructors                    ==\n";

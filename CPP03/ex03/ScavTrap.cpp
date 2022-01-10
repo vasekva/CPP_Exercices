@@ -6,10 +6,9 @@ ScavTrap::ScavTrap() : ClapTrap("Default ScavTrap_Name")
 	this->energyPoints = 50;
 	this->attackDamage = 20;
 	this->goodMode = false;
-	cout << BOLD << YELLOW << "[ScavTrap]" << NORM;
-	cout << BOLD << GREEN << "Default Constructor\t" << NORM
-		<< "of an object with name "
-		<< BRIGHT_BLUE << this->name << NORM
+	cout << BOLD << YELLOW << "[ScavTrap] " << NORM;
+	cout << BOLD << GREEN << "Def.Constructor\t" << NORM
+		<< BRIGHT_BLUE << this->getName() << NORM
 		<< " called"
 		<< endl;
 }
@@ -20,29 +19,26 @@ ScavTrap::ScavTrap(const string &name) : ClapTrap(name)
 	this->energyPoints = 50;
 	this->attackDamage = 20;
 	this->goodMode = false;
-	cout << BOLD << YELLOW << "[ScavTrap]" << NORM;
+	cout << BOLD << YELLOW << "[ScavTrap] " << NORM;
 	cout << BOLD << GREEN << "Constructor\t\t" << NORM
-		<< "of an object with name "
-		<< BRIGHT_BLUE << this->name << NORM
+		<< BRIGHT_BLUE << this->getName() << NORM
 		<< " called"
 		<< endl;
 }
 
 ScavTrap::~ScavTrap()
 {
-	cout << BOLD << YELLOW << "[ScavTrap]" << NORM;
+	cout << BOLD << YELLOW << "[ScavTrap] " << NORM;
 	cout << BOLD << RED << "Destructor\t" << NORM
-		<< "of the object with name \""
-		<< BRIGHT_BLUE << this->name << NORM
-		<< "\"\tcalled"
+		<< BRIGHT_BLUE << this->getName() << NORM
+		<< "\tcalled"
 		<< endl;
 }
 
 ScavTrap::ScavTrap(const ScavTrap &copyObject)
 {
-	cout << BOLD << YELLOW << "[ScavTrap]" << NORM;
+	cout << BOLD << YELLOW << "[ScavTrap] " << NORM;
 	cout << BOLD << GREEN << "Copy constructor\t" << NORM
-		<< "of an object "
 		<< URED << this << NORM
 		<< " and "
 		<< URED << &copyObject << NORM
@@ -65,10 +61,20 @@ ScavTrap	&ScavTrap::operator=(const ScavTrap &copyObject)
 	return (*this);
 }
 
+void ScavTrap::attack(const string &target)
+{
+	cout << BOLD << YELLOW << "[ScavTrap] " << NORM;
+	cout << BRIGHT_BLUE << this->getName() << NORM
+		<< RED << " attack " << BRIGHT_BLUE << target << NORM ", "
+		<< "causing " << URED << this->getAttackDamage() << NORM
+		<< " points of damage!"
+		<< endl;
+}
+
 void	ScavTrap::guardGate()
 {
-	cout << BOLD << YELLOW << "[ScavTrap]" << NORM;
-	cout << "ScavTrap " << BRIGHT_BLUE << this->getName() << NORM
+	cout << BOLD << YELLOW << "[ScavTrap] " << NORM;
+	cout << BRIGHT_BLUE << this->getName() << NORM
 		<< " have entered in Gate keeper mode and"
 		<< BOLD << RED << " BECAME A GOD FOR A MOMENT! BEWARE! "  << NORM
 		<< endl;

@@ -34,7 +34,7 @@ class ClapTrap {
 		ClapTrap(const ClapTrap &copyObject);
 		~ClapTrap();
 		ClapTrap	&operator=(const ClapTrap &object);
-		void		attack(string const &target);
+		void		attack(string const &target) const;
 		void		takeDamage(unsigned int amount);
 		void		beRepaired(unsigned int amount);
 		string		getName() const;

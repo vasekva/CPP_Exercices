@@ -10,6 +10,10 @@ class ScavTrap : public ClapTrap
 		ScavTrap(const string &name);
 		~ScavTrap();
 		ScavTrap(const ScavTrap &copyObject);
+		string		getName() const;
+		int			getHitPoint() const;
+		int			getEnergyPoints() const;
+		int			getAttackDamage() const;
 		ScavTrap	&operator=(const ScavTrap &object);
 		void		guardGate();
 	private:

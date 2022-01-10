@@ -23,6 +23,7 @@ using	std::endl;
 # define BRIGHT_BLUE	"\033[36m"
 # define NONE			"\033[37m"
 # define URED			"\033[4;31m"
+# define UGREEN			"\033[4;32m"
 
 #endif
 
@@ -33,9 +34,10 @@ class ClapTrap {
 		ClapTrap(const ClapTrap &copyObject);
 		~ClapTrap();
 		ClapTrap	&operator=(const ClapTrap &object);
-		void		attack(string const &target) const;
+		void		attack(string const &target);
 		void		takeDamage(unsigned int amount);
 		void		beRepaired(unsigned int amount);
+
 		string		getName() const;
 		int			getHitPoint() const;
 		int			getEnergyPoints() const;

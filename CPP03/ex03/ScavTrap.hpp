@@ -3,21 +3,21 @@
 
 #include "ClapTrap.hpp"
 
-class ScavTrap : public ClapTrap
+class ScavTrap : public virtual ClapTrap
 {
 	public:
 		ScavTrap();
 		ScavTrap(const string &name);
 		~ScavTrap();
 		ScavTrap(const ScavTrap &copyObject);
-		ScavTrap	&operator=(const ScavTrap &object);
-		void		attack(string const &target) const;
+		void		attack(const string &target);
 		string		getName() const;
 		int			getHitPoint() const;
 		int			getEnergyPoints() const;
 		int			getAttackDamage() const;
+		ScavTrap	&operator=(const ScavTrap &object);
 		void		guardGate();
-	private:
+	protected:
 		bool	goodMode;
 };
 

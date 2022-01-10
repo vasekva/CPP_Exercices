@@ -6,9 +6,8 @@ ClapTrap::ClapTrap()
 	this->hitPoints = 10;
 	this->energyPoints = 10;
 	this->attackDamage = 0;
-	cout << BOLD << PURPLE << "[ClapTrap]" << NORM;
+	cout << BOLD << PURPLE << "[ClapTrap] " << NORM;
 	cout << BOLD << GREEN << "Default Constructor\t" << NORM
-		 << "of an object with name "
 		 << BRIGHT_BLUE << this->getName() << NORM
 		 << " called"
 		 << endl;
@@ -20,9 +19,8 @@ ClapTrap::ClapTrap(const string &name)
 	this->hitPoints = 10;
 	this->energyPoints = 10;
 	this->attackDamage = 0;
-	cout << BOLD << PURPLE << "[ClapTrap]" << NORM;
+	cout << BOLD << PURPLE << "[ClapTrap] " << NORM;
 	cout << BOLD << GREEN << "Constructor\t\t" << NORM
-		 << "of an object with name "
 		 << BRIGHT_BLUE << this->getName() << NORM
 		 << " called"
 		 << endl;
@@ -30,9 +28,8 @@ ClapTrap::ClapTrap(const string &name)
 
 ClapTrap::~ClapTrap()
 {
-	cout << BOLD << PURPLE << "[ClapTrap]" << NORM;
+	cout << BOLD << PURPLE << "[ClapTrap] " << NORM;
 	cout << BOLD << RED << "Destructor\t" << NORM
-		 << "of the object with name \""
 		 << BRIGHT_BLUE << this->getName() << NORM
 		 << "\"\tcalled"
 		 << endl;
@@ -40,9 +37,8 @@ ClapTrap::~ClapTrap()
 
 ClapTrap::ClapTrap(const ClapTrap &copyObject)
 {
-	cout << BOLD << PURPLE << "[ClapTrap]" << NORM;
+	cout << BOLD << PURPLE << "[ClapTrap] " << NORM;
 	cout << BOLD << GREEN << "Copy constructor\t" << NORM
-		 << "of an object "
 		 << URED << this << NORM
 		 << " and "
 		 << URED << &copyObject << NORM
@@ -68,10 +64,10 @@ ClapTrap	&ClapTrap::operator=(const ClapTrap &copyObject)
 	return (*this);
 }
 
-void ClapTrap::attack(const string &target)
+void ClapTrap::attack(const string &target) const
 {
-	cout << BOLD << PURPLE << "[ClapTrap]" << NORM;
-	cout << "ClapTrap " << BRIGHT_BLUE << this->getName() << NORM
+	cout << BOLD << PURPLE << "[ClapTrap] " << NORM;
+	cout << BRIGHT_BLUE << this->getName() << NORM
 		<< RED << " attack " << BRIGHT_BLUE << target << NORM ", "
 		<< "causing " << URED << this->getAttackDamage() << NORM
 		<< " points of damage!"
@@ -80,17 +76,17 @@ void ClapTrap::attack(const string &target)
 
 void	ClapTrap::takeDamage(unsigned int amount)
 {
-	cout << BOLD << PURPLE << "[ClapTrap]" << NORM;
-	cout << "ClapTrap " << BRIGHT_BLUE << this->getName() << NORM
+	cout << BOLD << PURPLE << "[ClapTrap] " << NORM;
+	cout << BRIGHT_BLUE << this->getName() << NORM
 		 << " gets " << URED << amount << NORM " points of damage!"
 		 << endl;
-	this->hitPoints -= amount;
-}
+	if ((this->hitPoints -= amount) < 0)
+		this->hitPoints = 0;}
 
 void	ClapTrap::beRepaired(unsigned int amount)
 {
-	cout << BOLD << PURPLE << "[ClapTrap]" << NORM;
-	cout << "ClapTrap " << BRIGHT_BLUE << this->getName() << NORM
+	cout << BOLD << PURPLE << "[ClapTrap] " << NORM;
+	cout << BRIGHT_BLUE << this->getName() << NORM
 		 << " repaired his hitPoints by " << GREEN << amount << NORM " points!"
 		 << endl;
 	this->hitPoints += amount;
