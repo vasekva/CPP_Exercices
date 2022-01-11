@@ -10,7 +10,7 @@ class Dog : public Animal
 		Dog();
 		~Dog();
 		Dog(const Dog &copyObject);
-		Dog	&operator=(const Dog &copyObject);
+		Dog	&operator=(const Dog &object);
 		string	getType(void) const;
 		Brain	*getAttribute() const;
 		void	makeSound()	const;

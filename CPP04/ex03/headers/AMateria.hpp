@@ -1,8 +1,9 @@
-#ifndef CPP_ANIMAL_HPP
-#define CPP_ANIMAL_HPP
+#ifndef AMATERIA_HPP
+# define AMATERIA_HPP
 
-#include <string>
 #include <iostream>
+
+#include "ICharacter.hpp"
 
 using	std::string;
 using	std::cout;
@@ -28,17 +29,21 @@ using	std::endl;
 
 #endif
 
-class Animal
+class ICharacter;
+
+class AMateria
 {
 	public:
-		Animal();
-		virtual ~Animal();
-		Animal(const Animal &copyObject);
-		Animal	&operator=(const Animal &object);
-		string	getType(void) const;
-		virtual void	makeSound() const = 0;
+			AMateria(string const &type);
+			virtual ~AMateria();
+			AMateria(const AMateria &copyObject);
+			AMateria &operator=(const AMateria &object);
+
+			string const		&getType() const;
+			virtual AMateria	*clone() const = 0;
+			virtual void 		use(ICharacter &target);
 	protected:
-		string	type;
+		string 	type;
 };
 
-#endif //CPP_ANIMAL_HPP
+#endif

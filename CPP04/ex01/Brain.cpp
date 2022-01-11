@@ -3,7 +3,7 @@
 Brain::Brain()
 {
 	cout << BOLD << YELLOW << "[Brain 🧠 ] " << NORM;
-	cout << BOLD << GREEN << "⚒ Def.Constructor\t"<< NORM
+	cout << BOLD << GREEN << "⚒ Def.Constructor\t" << NORM
 		 << "called"
 		 << endl;
 	for (int i = 0; i < 100; i++)
@@ -21,7 +21,7 @@ Brain::~Brain()
 Brain::Brain(const Brain &copyObject)
 {
 	cout << BOLD << YELLOW << "[Brain 🧠 ] " << NORM;
-	cout << BOLD << GREEN << "Copy constructor\t"
+	cout << BOLD << GREEN << "Copy constructor\t" << NORM
 		 << "called"
 		 << endl;
 	*this = copyObject;
