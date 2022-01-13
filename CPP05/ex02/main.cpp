@@ -21,6 +21,10 @@ void	TestShrubberyCreationForm() //s145 e137
 		Bureaucrat eva("eva", 136);
 		ShrubberyCreationForm tree("file");
 		tree.beSigned(eva);
+
+		cout << eva << endl;
+		cout << tree << endl;
+
 		try
 		{
 			tree.execute(eva);
@@ -64,6 +68,10 @@ void	TestRobotomyRequestForm() // s72 e45
 		Bureaucrat jojo("jojo", 44);
 		RobotomyRequestForm robo("robo");
 		robo.beSigned(jojo);
+
+		cout << jojo << endl;
+		cout << robo << endl;
+
 		robo.execute(jojo);
 	}
 	catch (exception &e)
@@ -87,9 +95,13 @@ void 	TestPresidentialPardonForm() // s25 e5
 	try
 	{
 		Bureaucrat james("James", 6);
-		PresidentialPardonForm city("somePresedential");
-		city.beSigned(james);
-		city.execute(james);
+		PresidentialPardonForm pardon("somePresedential");
+		pardon.beSigned(james);
+
+		cout << james << endl;
+		cout << pardon << endl;
+
+		pardon.execute(james);
 	}
 	catch (exception &e)
 	{
