@@ -72,6 +72,10 @@ void ShrubberyCreationForm::execute(const Bureaucrat &object) const
 	std::ofstream	file;
 
 	this->Form::isValidExecute(object);
+
+	cout << " ✅ " << BRIGHT_BLUE "[" << object.getName() << "]" << GREEN << " executes "
+									 << PURPLE << this->getTarget() << endl;
+
 	file.open((target + "_shrubbery").c_str());
 	if (!file.good())
 		throw FileOpenError();

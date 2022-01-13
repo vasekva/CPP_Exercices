@@ -70,6 +70,10 @@ const string &PresidentialPardonForm::getTarget() const { return target; }
 void PresidentialPardonForm::execute(const Bureaucrat &object) const
 {
 	this->Form::isValidExecute(object);
+
+	cout << " ✅ " << BRIGHT_BLUE "[" << object.getName() << "]" << GREEN << " executes "
+									 << PURPLE << this->getTarget() << endl;
+
 	cout << YELLOW << target
 		<< GREEN << " was forgiven by "
 		<< BRIGHT_BLUE << "Zafor Beeblebrox" << NORM << endl;

@@ -56,6 +56,8 @@ void try_exception()
 	try
 	{
 		Bureaucrat buro4("Buro4", 2);
+		cout << buro4 << endl;
+		cout << BRIGHT_BLUE << "Incrementing..." << NORM << endl;
 		for (int i = 0; i < 3; i++)
 			buro4.incrementGrade();
 //		Bureaucrat buro4("Buro4", 149);

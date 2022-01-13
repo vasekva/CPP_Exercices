@@ -66,6 +66,8 @@ Form	*Intern::makeForm(const string &name, const string &target)
 	{
 		if (name == forms[i])
 		{
+			cout << BRIGHT_BLUE << "Intern " << GREEN << "creates "
+				<< YELLOW << target << endl;
 			switch (i)
 			{
 				case 0: form = new ShrubberyCreationForm(target); break;

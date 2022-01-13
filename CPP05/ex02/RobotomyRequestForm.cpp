@@ -70,6 +70,10 @@ const string &RobotomyRequestForm::getTarget() const { return target; }
 void RobotomyRequestForm::execute(const Bureaucrat &object) const
 {
 	this->Form::isValidExecute(object);
+
+	cout << " ✅ " << BRIGHT_BLUE "[" << object.getName() << "]" << GREEN << " executes "
+		<< PURPLE << this->getTarget() << endl;
+
 	std::srand(time(0));
 	if (std::rand() % 2)
 	{

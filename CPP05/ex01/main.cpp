@@ -10,6 +10,7 @@ int main()
 	cout << bure << endl << endl;
 
 	bure.signForm(formular);
+	cout << BRIGHT_BLUE << "Incrementing grade..." << NORM << endl;
 	bure.incrementGrade();
 	bure.signForm(formular);
 	cout << endl << formular << endl;
@@ -18,7 +19,7 @@ int main()
 	{
 		for (int i = 0; i < 150; i++)
 			bure.decrementGrade();
-		cout << bure << endl;
+		cout << bure << endl; //GradeTooLowException
 	}
 	catch (std::exception &e)
 	{
@@ -27,7 +28,7 @@ int main()
 
 	try
 	{
-		Bureaucrat bure1("Bureaucrat", 0);
+		Bureaucrat bure1("Bureaucrat", 0); //GradeTooHighException
 	}
 	catch (std::exception &e)
 	{
