@@ -1,5 +1,5 @@
-#ifndef CPP_DATA_HPP
-#define CPP_DATA_HPP
+#ifndef CPP_BASE_HPP
+#define CPP_BASE_HPP
 
 #include <string>
 #include <iostream>
@@ -26,20 +26,16 @@ using	std::cout;
 
 #endif
 
-class Data
+class Base
 {
 	public:
-		Data();
-		~Data();
-		Data(const Data &copyObject);
-		Data	&operator=(const Data &object);
-		int		getValue() const;
-		const string	&getName() const;
-		const string	&getMiddleName() const;
+		Base();
+		virtual ~Base();
+		Base	*generate(void);
+		void	identifyPointer(Base *p);
+		void	identifyReference(Base &p);
 	private:
-		int	birthDate;
-		string	name;
-		string	middleName;
 };
 
-#endif //CPP_DATA_HPP
+
+#endif //CPP_BASE_HPP
