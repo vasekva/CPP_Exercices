@@ -51,9 +51,7 @@ void Printer::printDouble() const
 	if (stats[0] == "Correct")
 	{
 		if (doubleVal - intVal == 0)
-		{
 			cout << UGREEN << doubleVal << ".0" << NORM << " ✅ " << endl;
-		}
 		else
 			cout << UGREEN << doubleVal << NORM << " ✅ " << endl;
 	}
@@ -67,9 +65,7 @@ void Printer::printFloat() const
 	if (stats[1] == "Correct")
 	{
 		if (floatVal - intVal == 0)
-		{
 			cout << UGREEN << floatVal << ".0f" << NORM << " ✅ " << endl;
-		}
 		else
 			cout << UGREEN << floatVal << "f" << NORM << " ✅ " << endl;
 	}
