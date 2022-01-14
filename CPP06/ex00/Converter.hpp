@@ -4,11 +4,22 @@
 #include <string>
 #include <iostream>
 
+//#include <ios>
+#include <climits>
+#include <cfloat>
+#include <cmath>
+//#include <cctype>
+//#include <cstring>
+//#include <cstdlib>
+//#include <exception>
+//#include <cerrno>
+
 using	std::string;
 using	std::cout;
 using	std::cin;
 using	std::endl;
 using	std::exception;
+
 
 #ifndef COLOR
 
@@ -28,6 +39,8 @@ using	std::exception;
 
 #endif
 
+#include "Printer.hpp"
+
 class Converter
 {
 	public:
@@ -36,19 +49,27 @@ class Converter
 		Converter(const Converter &copyObject);
 		Converter	&operator=(const Converter &object);
 		const string	&getStr() const;
-		char			getChar() const;
 		int				getInt() const;
+		char			getChar() const;
 		float			getFloat() const;
 		double			getDouble() const;
-		bool		isChar() const;
 		void		startConverting();
+		void		checkChar(void);
+		void		checkDouble(void);
+		void		checkFloat(void);
+		void		checkInt(void);
 	private:
-		Converter();
-		string	convertStr;
-		double	doubleVal;
-		float	floatVal;
-		char 	charVal;
-		int		intVal;
+			Converter();
+			string	stats[4];
+			string	convertStr;
+			double	doubleVal; // 0
+			string	dStat;
+			float	floatVal; // 1
+			string	fStat;
+			char 	charVal; // 2
+			string	cStat;
+			long int	intVal; // 3
+			string	iStat;
 };
 
 #endif //CPP_CONVERTER_HPP

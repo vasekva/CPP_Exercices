@@ -10,7 +10,7 @@ CXX 		= c++
 
 FLAGS		= -Wall -Wextra -Werror -Wno-unused -std=c++98 -MMD
 
-SRCS		= main.cpp Converter.cpp
+SRCS		= main.cpp Converter.cpp Printer.cpp
 
 OBJS_DIR 	= objs/
 
