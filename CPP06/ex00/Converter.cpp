@@ -96,7 +96,6 @@ void Converter::checkDouble(void)
 				dStat = "impossible";
 			else
 			{
-				cout << RED << "Double IF\n" << NORM;
 				this->doubleVal = std::strtod(convertStr.c_str(), NULL);
 				dStat = "Correct";
 			}

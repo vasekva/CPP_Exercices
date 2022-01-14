@@ -93,8 +93,8 @@ void Printer::printInt() const
 
 void Printer::printValues() const
 {
-	printDouble();
-	printFloat();
-	printInt();
 	printChar();
+	printInt();
+	printFloat();
+	printDouble();
 }

@@ -3,23 +3,15 @@
 
 #include <string>
 #include <iostream>
-
-//#include <ios>
 #include <climits>
 #include <cfloat>
 #include <cmath>
-//#include <cctype>
-//#include <cstring>
-//#include <cstdlib>
-//#include <exception>
-//#include <cerrno>
 
 using	std::string;
 using	std::cout;
 using	std::cin;
 using	std::endl;
 using	std::exception;
-
 
 #ifndef COLOR
 
