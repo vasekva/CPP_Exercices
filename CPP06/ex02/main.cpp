@@ -4,6 +4,7 @@ int	main(void)
 {
 	Base	base;
 
+	srand(time(0));
 	Base *random = base.generate();
 	base.identifyPointer(random);
 

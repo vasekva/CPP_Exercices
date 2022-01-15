@@ -86,7 +86,7 @@ void Printer::printInt() const
 {
 	cout << "int: ";
 	if (stats[3] == "Correct")
-		cout << UGREEN << doubleVal << NORM << " ✅ " << endl;
+		cout << UGREEN << intVal << NORM << " ✅ " << endl;
 	else
 		cout << URED << stats[3] << NORM << " 😢" << endl;
 }
