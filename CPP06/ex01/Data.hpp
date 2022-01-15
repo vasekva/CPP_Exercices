@@ -33,7 +33,7 @@ class Data
 		~Data();
 		Data(const Data &copyObject);
 		Data	&operator=(const Data &object);
-		int		getValue() const;
+		int				getBirthDate() const;
 		const string	&getName() const;
 		const string	&getMiddleName() const;
 	private:

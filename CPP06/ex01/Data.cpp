@@ -18,13 +18,13 @@ Data &Data::operator=(const Data &object)
 {
 	if (this != &object)
 	{
-		this->birthDate = object.birthDate;
-		this->name = object.name;
-		this->middleName = object.middleName;
+		this->birthDate = object.getBirthDate();
+		this->name = object.getName();
+		this->middleName = object.getMiddleName();
 	}
 	return (*this);
 }
 
 const string	&Data::getName() const { return (this->name); }
-int				Data::getValue() const { return (this->birthDate); }
+int				Data::getBirthDate() const { return (this->birthDate); }
 const string	&Data::getMiddleName() const { return (this->middleName); }

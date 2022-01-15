@@ -21,7 +21,7 @@ int	main(void)
 	cout << "Address of the object: "
 		<< UGREEN << object << NORM << endl;
 	cout << BRIGHT_BLUE << "\t birthDate: " << NORM
-		<< YELLOW << object->getValue() << NORM << endl;
+		<< YELLOW << object->getBirthDate() << NORM << endl;
 	cout << BRIGHT_BLUE << "\t name: " << NORM
 		<< YELLOW << object->getName() << NORM << endl;
 	cout << BRIGHT_BLUE << "\t middleName: " << NORM
@@ -35,7 +35,7 @@ int	main(void)
 
 	cout << "Address of the deserialized object: " << UGREEN  << deserialized << NORM << endl;
 	cout << BRIGHT_BLUE << "\t birthDate: " << NORM
-		 << YELLOW << deserialized->getValue() << NORM << endl;
+		 << YELLOW << deserialized->getBirthDate() << NORM << endl;
 	cout << BRIGHT_BLUE << "\t name: " << NORM
 		 << YELLOW << deserialized->getName() << NORM << endl;
 	cout << BRIGHT_BLUE << "\t middleName: " << NORM

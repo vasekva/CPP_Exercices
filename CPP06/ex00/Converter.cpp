@@ -142,7 +142,7 @@ void Converter::checkInt(void)
 {
 	try
 	{
-		if (!std::isdigit(convertStr[0]))
+		if (convertStr.length() == 1  && !std::isdigit(convertStr[0]))
 			throw ("Error during IntCast!");
 		else
 		{
