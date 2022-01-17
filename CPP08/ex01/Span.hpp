@@ -41,6 +41,7 @@ class Span
 		std::vector<int>    getData() const;
 		void	printData() const;
 		void    addNumber(const int n);
+		void	addRandomNumbers(int count);
 		int 	shortestSpan();
 		int		longestSpan();
 		class CustomSpanException : public std::exception

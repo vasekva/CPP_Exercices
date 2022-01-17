@@ -11,10 +11,9 @@ Span::Span(const unsigned int n) { this->capacity = n; }
 Span::CustomSpanException::CustomSpanException(const string &errorMsg)
 {
 	string error = URED;
-	error += " ";
 	error += errorMsg;
 	error += NORM;
-	this->errorMsg = errorMsg;
+	this->errorMsg = error;
 }
 
 /*
@@ -55,10 +54,13 @@ std::ostream	&operator<<(std::ostream &out, const Span &object)
 	int	size = object.getData().size();
 
 	cout << endl;
-	cout << "Data capacity: " << capacity << endl;
-	cout << "Cells occupied: " << size << endl;
-	cout << "Free cells: " << capacity - size << endl;
-	cout << "It's values: ";
+	cout << UGREEN << "Data capacity:" << NORM
+		<< " " << capacity << endl;
+	cout << UGREEN << "Cells occupied:" << NORM
+		<< " " << size << endl;
+	cout << UGREEN << "Free cells:" << NORM
+		" " << capacity - size << endl;
+	cout << BRIGHT_BLUE << "It's values: " << NORM;
 	object.printData();
 	return (out);
 }
@@ -91,8 +93,18 @@ const char *Span::CustomSpanException::what() const throw()
 void    Span::addNumber(const int n)
 {
 	if (data.size() + 1 > capacity)
-		throw Span::CustomSpanException("Object is already full!");
+		throw Span::CustomSpanException("❌ Data capacity is full!");
 	data.push_back(n);
+}
+
+void    Span::addRandomNumbers(int count)
+{
+	for (int i = 0; i < count; i++)
+	{
+		if (data.size() + 1 > capacity)
+			throw Span::CustomSpanException("❌ Data capacity is full!");
+		data.push_back(rand() % count);
+	}
 }
 
 void Span::printData() const
@@ -128,7 +140,7 @@ int Span::shortestSpan()
 int Span::longestSpan()
 {
 	if (data.size() <= 1)
-		throw CustomSpanException("Not enough numbers!");
+		throw CustomSpanException("❌ Not enough numbers!");
 	vIter min = std::min_element(data.begin(), data.end());
 	vIter max = std::max_element(data.begin(), data.end());
 	return (*max - *min);
