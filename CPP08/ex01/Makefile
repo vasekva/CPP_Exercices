@@ -10,7 +10,7 @@ CXX 		= c++
 
 FLAGS		= -Wall -Wextra -Werror -Wno-unused -std=c++98 -MMD
 
-SRCS		= main.cpp
+SRCS		= main.cpp Span.cpp
 
 OBJS_DIR 	= objs/
 

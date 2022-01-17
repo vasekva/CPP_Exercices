@@ -1,71 +1,135 @@
 #include "Span.hpp"
 
-Span::Span(unsigned int n)
+/*
+"========================================================";
+"==                  Constructors                      ==";
+"========================================================";
+*/
+
+Span::Span(const unsigned int n) { this->capacity = n; }
+
+Span::CustomSpanException::CustomSpanException(const string &errorMsg)
 {
-	this->size = n;
+	string error = URED;
+	error += " ";
+	error += errorMsg;
+	error += NORM;
+	this->errorMsg = errorMsg;
 }
 
-Span::~Span()
-{
-	data.clear();
-}
+/*
+"========================================================";
+"==                     Destructors                    ==";
+"========================================================";
+*/
 
-Span::Span(const Span &object)
-{
-	*this = object;
-}
+Span::~Span() { data.clear(); }
+Span::CustomSpanException::~CustomSpanException() throw() { }
 
-Span	&Span::operator=(const Span &copyObject)
+/*
+"========================================================";
+"==          CopyConstructors and operators            ==";
+"========================================================";
+*/
+
+Span::Span(const Span &copyObject) { *this = copyObject; }
+
+Span	&Span::operator=(const Span &object)
 {
-	if (this != &copyObject)
+	if (this != &object)
 	{
-		this->copyObject.data.clear();
-		this->size = copyObject.size;
-		this->data = copyObject.data;
+		data = object.data;
+		capacity = object.capacity;
 	}
 	return (*this);
 }
 
+int  &Span::operator[](unsigned int i)
+{
+	return (data.at(i));
+}
+
 std::ostream	&operator<<(std::ostream &out, const Span &object)
 {
-	cout << object.getSize() << endl;
+	int capacity = object.getCapacity();
+	int	size = object.getData().size();
+
+	cout << endl;
+	cout << "Data capacity: " << capacity << endl;
+	cout << "Cells occupied: " << size << endl;
+	cout << "Free cells: " << capacity - size << endl;
+	cout << "It's values: ";
+	object.printData();
 	return (out);
-};
+}
 
-int Span::getSize() const { return (this->size); }
+/*
+"========================================================";
+"==                     Getters                        ==";
+"========================================================";
+*/
 
-void	Span::addNumber(const int n)
+int Span::getCapacity() const { return (this->capacity); }
+
+std::vector<int> Span::getData() const
 {
-	if (data.size() + 1 > size)
-		throw Span::objectSizeException("Object is already full!");
+	return (this->data);
+}
+
+/*
+"========================================================";
+"==                     Methods                        ==";
+"========================================================";
+*/
+
+const char *Span::CustomSpanException::what() const throw()
+{
+	return (this->errorMsg.c_str());
+}
+
+
+void    Span::addNumber(const int n)
+{
+	if (data.size() + 1 > capacity)
+		throw Span::CustomSpanException("Object is already full!");
 	data.push_back(n);
-	size++;
 }
 
-int		Span::longestSpan(void) const
+void Span::printData() const
 {
-	if (size <= 1)
-		throw Span::objectSizeException("Not enough numbers!");
-
-	vectIt	minIt = std::min_element(data.begin(), data.end());
-	vectIt	maxIt = std::max_element(data.begin(), data.end());
-
-	return (*maxIt - *minIt);
+	for (int i = 0; i < (int)this->data.size(); i++)
+	{
+		cout << this->data[i];
+		if (i + 1 != (int)this->data.size())
+			cout << " ";
+	}
+	cout << endl;
 }
 
-int		Span::shortestSpan(void) const
+// ! методы с арифметикой итераторов не делать константными
+
+int Span::shortestSpan()
 {
 	int		secondMin;
-	vectIt	minIt;
+	vIter	minIt;
 
-	if (size <= 1)
-		throw Span::objectSizeException("Not enough numbers!");
+	if (data.size() <= 1)
+		throw CustomSpanException("Not enough numbers!");
 	minIt = std::min_element(data.begin(), data.end());
 	if (minIt == data.begin())
 		secondMin = *std::min_element(data.begin() + 1, data.end());
-	else if (minIt + 1 == _data.end())
+	else if (minIt + 1 == data.end())
 		secondMin = *std::min_element(data.begin(), data.end() - 1);
 	else
 		secondMin = std::min(*std::min_element(data.begin(), minIt - 1), *std::min_element(minIt + 1, data.end()));
 	return (secondMin - *minIt);
+}
+
+int Span::longestSpan()
+{
+	if (data.size() <= 1)
+		throw CustomSpanException("Not enough numbers!");
+	vIter min = std::min_element(data.begin(), data.end());
+	vIter max = std::max_element(data.begin(), data.end());
+	return (*max - *min);
 }
