@@ -87,25 +87,25 @@ int main()
 // "================================ SECOND TEST ====================================";
 // "=================================================================================";
 
-//	cout << PURPLE << "[⚙️ TEST #2]" << NORM << endl;
-//	printTest(sp);
-//
-//	cout << YELLOW << "[Creating a mirror of the SPAN]" << NORM;
-//	Span mirror(sp);
-//	cout << mirror << endl;
+	cout << PURPLE << "[⚙️ TEST #2]" << NORM << endl;
+	printTest(sp);
+
+	cout << YELLOW << "[Creating a mirror of the SPAN]" << NORM;
+	Span mirror(sp);
+	cout << mirror << endl;
 
 
 // "================================  THIRD TEST ====================================";
 // "=================================================================================";
 
-//	cout << PURPLE << "[⚙️ TEST #3]" << NORM << endl;
-//	anotherHeap_Test(sp, mirror);
+	cout << PURPLE << "[⚙️ TEST #3]" << NORM << endl;
+	anotherHeap_Test(sp, mirror);
 
 // "================================ FOURTH TEST ====================================";
 // "=================================================================================";
 
-//	cout << PURPLE << "[⚙️ TEST #4]" << NORM << endl;
-//	outOfBounds_Test(sp);
+	cout << PURPLE << "[⚙️ TEST #4]" << NORM << endl;
+	outOfBounds_Test(sp);
 
 	return (0);
 }

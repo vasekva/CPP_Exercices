@@ -5,10 +5,6 @@
 #include <iostream>
 #include "Weapon.hpp"
 
-using	std::cout;
-using	std::endl;
-using	std::string;
-
 #ifndef COLOR
 
 #define COLOR

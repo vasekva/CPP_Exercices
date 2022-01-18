@@ -1,13 +1,12 @@
-#ifndef CPP_HUMANA_HPP
-#define CPP_HUMANA_HPP
+#ifndef CPP_WEAPON_HPP
+#define CPP_WEAPON_HPP
 
 #include <string>
 #include <iostream>
-#include "Weapon.hpp"
 
-using	std::cout;
-using	std::endl;
-using	std::string;
+using std::string;
+using std::cout;
+using std::endl;
 
 #ifndef COLOR
 
@@ -25,16 +24,15 @@ using	std::string;
 
 #endif
 
-class HumanA {
+class Weapon {
 	public:
-		HumanA(string name, Weapon &weapon);
-		~HumanA();
-		void	attack(void) const;
-		string	getName() const;
-		Weapon	&getWeapon(void) const;
+		Weapon(string type);
+		~Weapon();
+		const string	&getType() const;
+		void			setType(string type);
 	private:
-		Weapon	&weapon;
-		string	name;
+		string	type;
 };
 
-#endif //CPP_HUMANA_HPP
+
+#endif //CPP_WEAPON_HPP
